@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to aderifkysetiawan.site</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Courier New", Courier, monospace;
+            background-color: #121212;
+            color: #00ff00;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content slightly to the top */
+            align-items: center; /* Center content horizontally */
+            height: 100vh; /* Full viewport height */
+            box-sizing: border-box;
+            padding-top: 40px; /* Add top padding to give some space above */
+        }
+        .container {
+            text-align: center;
+            width: 100%; /* Allow container to take full width */
+            max-width: 600px; /* Limit max width for large screens */
+            margin-top: 20px; /* Space from the top */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 150px; /* Smaller logo */
+            margin-bottom: 10px;
+        }
+
+        .terminal {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 10px; /* Reduced padding */
+            border-radius: 8px;
+            width: 90%; /* Reduced width */
+            max-width: 450px; /* Smaller max width */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            font-family: "Courier New", Courier, monospace;
+            text-align: left;
+            margin-top: 20px;
+            position: relative;
+            display: flex;
+            justify-content: flex-start; /* Align the terminal content to the left */
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden; /* Ensures text doesn't overflow */
+            margin-left: auto; /* Center terminal horizontally */
+            margin-right: auto; /* Center terminal horizontally */
+        }
+
+        .terminal::before {
+            content: "root@192.168.0.0:";
+            color: #00aaff;
+            margin-right: 10px;
+        }
+
+        .terminal .message {
+            display: inline-block;
+            animation: typing 5s steps(30, end), blink 0.5s step-end infinite;
+            border-right: 2px solid #00ff00;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 80%; } /* Adjusted typing width */
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .site-name {
+            font-size: 2.5em; /* Increased font size */
+            margin: 10px 0;
+            animation: typing 4s steps(20, end), blink 0.5s step-end infinite;
+            border-right: 2px solid #00ff00;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em; /* Reduce heading size on tablets */
+            }
+
+            .site-name {
+                font-size: 2em; /* Larger site name on tablets */
+                animation: typing 4s steps(18, end), blink 0.5s step-end infinite;
+                margin: 20px 0; /* Add margin for better spacing */
+            }
+
+            img {
+                max-width: 120px; /* Smaller logo size on mobile */
+            }
+
+            .terminal {
+                padding: 8px; /* Further reduce padding */
+                width: 90%;
+                max-width: 380px; /* Reduced max-width */
+                margin: 20px 0; /* Better spacing */
+                font-size: 0.9em; /* Smaller terminal font */
+                justify-content: center; /* Ensure the terminal is centered */
+                margin-left: auto; /* Ensure the terminal is centered */
+                margin-right: auto; /* Ensure the terminal is centered */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4em; /* Further reduce heading size */
+            }
+
+            .site-name {
+                font-size: 1.5em; /* Slightly smaller site name on very small screens */
+                margin: 15px 0;
+            }
+
+            .terminal {
+                font-size: 0.65em; /* Smaller terminal font */
+                padding: 6px; /* Even smaller padding */
+                width: 95%; /* Ensure terminal container fits within screen */
+                max-width: 85%; /* Ensure it doesn't stretch too wide */
+                margin: 20px; /* Add margin for better spacing */
+                justify-content: center; /* Ensure the terminal is centered */
+                margin-left: auto; /* Ensure the terminal is centered */
+                margin-right: auto; /* Ensure the terminal is centered */
+            }
+
+            img {
+                max-width: 100px; /* Make logo smaller on very small screens */
+            }
+        }
+
+        /* Button Styles */
+        .button-container {
+            margin-top: 50px; /* Add space above the button */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            font-size: 1.2em;
+            color: #00ff00; /* Same color as the text */
+            border: 2px solid #00ff00; /* Border color matches text color */
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            background-color: transparent; /* Transparent background */
+            text-transform: uppercase; /* Uppercase letters for button text */
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
+            
+        }
+
+        .button:hover {
+            background-color: #00ff00; /* Green background on hover */
+            color: #121212; /* Dark text color on hover */
+        }
+
+        /* My Project Button without typing effect */
+        .button {
+            font-size: 1em; /* Adjusted font size */
+            color: #00ff00; /* Green text */
+            border: 2px solid #00ff00; /* Border color same as text */
+            background: transparent; /* Transparent background */
+            text-transform: none; /* No uppercase */
+            padding: 10px 20px; /* Regular padding */
+            margin-top: 20px; /* Space above the button */
+        }
+
+        /* Responsive for small screens */
+        @media (max-width: 480px) {
+            .button {
+                font-size: 0.9em; /* Smaller font size for very small screens */
+                padding: 8px 16px; /* Adjusted padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" alt="Linux Logo">
+        <h1>Welcome to</h1>
+        <div class="site-name">aderifkysetiawan.site</div>
+        <div class="terminal">
+            <span class="message">Creativity is up and running!</span>
+        </div>
+        <!-- "My Project" Button without typing effect -->
+        <div class="button-container">
+            <div class="button">My Project</div>
+        </div>
+    </div>
+</body>
+</html>
