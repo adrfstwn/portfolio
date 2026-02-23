@@ -4,20 +4,7 @@ body {
     font-family: "Courier New", Courier, monospace;
     background-color: #121212;
     color: #00ff00;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
-    box-sizing: border-box;
-    padding-top: 40px;
-}
-
-.container {
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    margin-top: 20px;
+    min-height: 100vh;
 }
 
 h1 {
@@ -25,10 +12,85 @@ h1 {
     margin: 20px 0;
 }
 
-img {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 20px;
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar .terminal {
+    margin: 0;
+    width: auto;
+    max-width: none;
+    padding: 8px 14px;
+    font-size: 1em;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #121212;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+    font-size: large;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 50px;
+}
+
+.nav-link {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #00ffaa;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(72%) sepia(94%) saturate(507%) hue-rotate(80deg);
+    transition: 0.3s;
+    max-width: 24px;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
 }
 
 .terminal {
@@ -37,19 +99,17 @@ img {
     padding: 20px;
     border-radius: 12px;
     width: 100%;
-    max-width: 720px;
+    max-width: 600px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
     font-family: "Courier New", Courier, monospace;
     text-align: left;
-    margin-top: 30px;
     position: relative;
     display: flex;
+    margin: 0;
     justify-content: flex-start;
     align-items: center;
     white-space: nowrap;
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
     font-size: 1.5em;
     line-height: 1.6;
 }
@@ -72,6 +132,59 @@ img {
     text-align: left;
     font-size: 1em;
     line-height: 1.6;
+}
+
+.project-timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1800px;
+    margin: 120px auto;
+}
+
+.project-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 60px;              
+    bottom: 60px;    
+    transform: translateX(-50%);
+    width: 3px;
+    background: white;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 40px 60px;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-item.left::before {
+    right: -7px;
+}
+
+.timeline-item.right::before {
+    left: -7px;
 }
 
 @keyframes typing {
@@ -101,34 +214,19 @@ img {
     margin-top: 20px;
 }
 
-.project-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on larger screens */
-    gap: 40px;
-    margin-top: 40px;
-    margin-top: 80px;
-    width: 100%;
-    max-width: 1200px; /* Increase max-width for wider screens */
-    margin-left: auto;
-    margin-right: auto; /* Center the grid on larger screens */
-}
-
 .project-card {
     background-color: #1a1a1a;
-    padding: 0;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
     color: #00ff00;
     overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: auto; /* Allow the card to grow */
-    min-height: 600px; /* Extend card height */
+    transition: 0.3s;
+
+    aspect-ratio: 10 / 10;
+
     display: flex;
     flex-direction: column;
-    width: 100%;
-    position: relative; /* Ensure positioning context for footer */
-    margin-bottom: 40px;
+    padding: 20px;
 }
 
 .project-card:hover {
@@ -139,35 +237,36 @@ img {
 .project-image {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    background-color: #333; /* Placeholder color */
-    background-size: cover; /* Make sure the image covers the entire area */
-    background-position: center; /* Center the image */
+    padding-bottom: 56.25%; 
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
 }
 
 .project-card img {
-    display: none; /* Hide the default image tag */
+    display: none;
 }
+
 .project-card h3 {
     font-size: 1.5em;
     margin: 20px 0;
+    text-align: center;   /* judul di tengah */
 }
 
 .project-card p {
     font-size: 1em;
-    margin: 10px;
-    text-align: justify;
-    flex-grow: 1;
+    margin: 10px 0;
+    text-align: justify;  /* rata kanan kiri */
+    flex-grow: 1;         /* dorong footer ke bawah */
 }
+
 .card-footer {
-    margin-top: 30px; /* Increase space between description and button */
-    padding: 10px 0; /* Add padding for spacing */
-    flex-grow: 0;
-    position: absolute;
-    bottom: 20px; /* Ensure footer stays at the bottom */
-    left: 0;
-    right: 0;
+    margin-top: auto;     /* MAGIC LINE */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
 }
 
 .project-link {
@@ -175,7 +274,7 @@ img {
     color: #00ff00;
     text-decoration: none;
     border: 2px solid #00ff00;
-    padding: 10px 20px; /* Adjust button padding */
+    padding: 10px 20px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
@@ -186,7 +285,6 @@ img {
 }
 
 
-/* Responsiveness for smaller screens */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5em;
@@ -205,17 +303,31 @@ img {
         padding: 10px 16px;
     }
 
-    img {
-        max-width: 150px;
-    }
-
-    /* 1 card per row on tablets */
     .project-cards {
         grid-template-columns: 1fr;
     }
 
     .project-card {
-        height: 400px; /* Adjusting height for smaller devices */
+        height: 400px;
+    }
+        .project-timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+        text-align: left;
+    }
+
+    .timeline-item::before {
+        left: 13px;
     }
 }
 
@@ -241,21 +353,20 @@ img {
         margin-top: 50px;
     }
 
-    img {
+    img:not(.social-icon) {
         max-width: 120px;
     }
-
    
     .project-cards {
         display: grid;
-        grid-template-columns: (1fr); /* 2 cards per row on larger screens */
+        grid-template-columns: (1fr); 
         gap: 30px;
         margin-top: 30px;
         margin-top: 40px;
         width: 80%;
-        max-width: 400px; /* Increase max-width for wider screens */
+        max-width: 400px; 
         margin-left: auto;
-        margin-right: auto; /* Center the grid on larger screens */
+        margin-right: auto; 
     }
 
     .project-card {
@@ -267,12 +378,12 @@ img {
         overflow: hidden;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: auto; /* Allow the card to grow */
-        min-height: 400px; /* Extend card height */
+        height: auto;
+        min-height: 400px;
         display: flex;
         flex-direction: column;
         width: 100%;
-        position: relative; /* Ensure positioning context for footer */
+        position: relative;
         margin-bottom: 20px;
     }
 
@@ -293,7 +404,7 @@ img {
         color: #00ff00;
         text-decoration: none;
         border: 2px solid #00ff00;
-        padding: 6px 12px; /* Adjust button padding */
+        padding: 6px 12px; 
         border-radius: 2px;
         transition: background-color 0.3s ease;
     }

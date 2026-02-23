@@ -3,22 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aderifkysetiawan.site</title>
+    <title>aderifkysetiawan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" alt="Linux Logo">
-        <h1>Welcome🔆🛜</h1>
-        <div class="terminal">
-            <span class="message">Creativity is up and running😎!</span>
-        </div>
-        <div class="button-container">
-            <div class="button">My Project</div>
+    <!----NAVBAR--->
+    <nav class="navbar">
+        <!-- LEFT -->
+        <div class="nav-left">
+            <div class="terminal">
+                <span class="message">Creativity is up and running!</span>
+            </div>
         </div>
 
-        <!-- Project Cards -->
-        <div class="project-cards">
+        <!-- CENTER -->
+        <div class="nav-center">
+            <a href="#" class="nav-link">Home</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="nav-right">
+            <a href="https://instagram.com/adrfstwn_" target="_blank">
+                <img src="images/instagram.svg" class="social-icon">
+            </a>
+
+            <a href="https://linkedin.com/in/aderifkysetiawan" target="_blank">
+                <img src="images/linkedin.svg" class="social-icon">
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- Project Timeline -->
+    <div class="project-timeline">
+
+        <div class="timeline-item left">
             <div class="project-card">
                 <div class="project-image" style="background-image: url('images/emokids.png');"></div>
                 <h3>Website Integrasi Image Processing with YOLOv8</h3>
@@ -27,7 +47,9 @@
                     <a href="https://emokids.aderifkysetiawan.site" class="project-link">View Project</a>
                 </div>
             </div>
-            
+        </div>
+        
+        <div class="timeline-item right">
             <div class="project-card">
                 <div class="project-image" style="background-image: url('images/gmedia.png');"></div>
                 <h3>Website Integrasi Error & Issue with Sentry</h3>
@@ -36,7 +58,9 @@
                     <a href="https://gmedia.aderifkysetiawan.site" class="project-link">View Project</a>
                 </div>
             </div>
-            
+        </div>
+
+        <div class="timeline-item left">
             <div class="project-card">
                 <div class="project-image" style="background-image: url('images/dukcapil.png');"></div>
                 <h3>Perancangan Website CMS Untuk Disdukcapil Kab. Sukoharjo</h3>
@@ -45,17 +69,8 @@
                     <a href="https://dukcapil-skh.aderifkysetiawan.site" class="project-link">View Project</a>
                 </div>
             </div>
-            
-            <!-- <div class="project-card">
-                <div class="project-image" style="background-image: url('images/dukcapil.png');"></div>
-                <h3>Website Integrasi Image Processing with YOLOv8</h3>
-                <p>Website ini dibuat menggunakan framework Flask Python dengan integrasi Socket IO python guna menangkap gambar secara langsung, serta meneruskan ke image processing untuk dideteksi</p>
-                <div class="card-footer">
-                    <a href="https://example.com" class="project-link">View Project</a>
-                </div>
-            </div> -->
-            
         </div>
+        
     </div>
 </body>
 </html>
