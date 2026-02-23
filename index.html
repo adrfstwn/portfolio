@@ -40,37 +40,115 @@
 
         <div class="timeline-item left">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/emokids.png');"></div>
-                <h3>Website Integrasi Image Processing with YOLOv8</h3>
-                <p>Website ini dibuat menggunakan framework Flask Python dengan integrasi Socket IO python guna menangkap gambar secara langsung, serta meneruskan ke image processing untuk dideteksi</p>
+                <div class="project-image slider">
+                    <div class="slides">
+                        <img src="images/erp.png">
+                        <img src="images/erp2.png">
+                    </div>
+                </div>
+                <h3>Enterprise Resource Planning (ERP) Integrasi dengan CEISA 4.0 Beacukai</h3>
+                <p>
+                    ERP Merupakan sebuah sistem yang dirancang untuk memenuhi pencatatan dalam suatu perusahaan yang terakomodir menjadi satu sistem yang saling terhubung
+                    untuk sistem ERP yang saya kembangkan dan pelihara meliputi beberapa fitur seperti Manajemen Gudang, Produksi, PPIC, Accounting, Marketing & Sales, Purchasing,
+                    Pengurusan Dokumen Ekspor Impor yang terintegrasi dengan pencatatan barang.
+                </p>
                 <div class="card-footer">
-                    <a href="https://emokids.aderifkysetiawan.site" class="project-link">View Project</a>
+                    <a href="#" class="project-link">View Project</a>
                 </div>
             </div>
         </div>
         
         <div class="timeline-item right">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/gmedia.png');"></div>
-                <h3>Website Integrasi Error & Issue with Sentry</h3>
-                <p>Website ini dibuat menggunakan framework Vue JS sebagai Frontend dan Framework Laravel sebagai Backend, Project ini merupakan hasil magang Tim UNS di PT. GMEDIA Yogyakarta</p>
+                <div class="project-image slider">
+                    <div class="slides">
+                        <img src="">
+                        <img src="">
+                    </div>
+                </div>
+                <h3>Website EarScope, Deteksi Penyakit Telinga Berbasis IoT</h3>
+                <p>
+                    Website ini dikembangkan untuk Tugas Akhir saya yaitu membuat IoT tentang deteksi penyakit telinga, menggunakan Raspberry Pi dan kamera endoskopi, 
+                    serta terintegrasi dengan website manajemen pasien yang membantu dokter dalam melihat hasil pemeriksaan dan riwayat pemeriksaan pasien.
+                </p>
                 <div class="card-footer">
-                    <a href="https://gmedia.aderifkysetiawan.site" class="project-link">View Project</a>
+                    <a href="#" class="project-link">View Project</a>
                 </div>
             </div>
         </div>
 
         <div class="timeline-item left">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/dukcapil.png');"></div>
-                <h3>Perancangan Website CMS Untuk Disdukcapil Kab. Sukoharjo</h3>
-                <p>Website ini dibuat menggunakan framework Laravel dan Vue Livewire, website ini tersedia halaman admin untuk mengatur content yang akan ditampilkan ke halaman utama website Disdukcapil Kab. Sukoharjo</p>
+                <div class="project-image slider">
+                    <div class="slides">
+                        <img src="images/emokids.png">
+                    </div>
+                </div>
+                <h3>Website Integrasi Image Processing with YOLOv8</h3>
+                <p>
+                    Website ini dibuat menggunakan framework Flask Python dengan integrasi Socket IO python guna menangkap gambar secara 
+                    langsung, serta meneruskan ke image processing untuk dideteksi
+                </p>
                 <div class="card-footer">
-                    <a href="https://dukcapil-skh.aderifkysetiawan.site" class="project-link">View Project</a>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline-item right">
+            <div class="project-card">
+                <div class="project-image slider">
+                    <div class="slides">
+                        <img src="images/gmedia.png">
+                    </div>
+                </div>
+                <h3>Website Integrasi Error & Issue with Sentry</h3>
+                <p>
+                    Website ini dibuat menggunakan framework Vue JS sebagai Frontend dan Framework Laravel sebagai Backend, Project ini 
+                    merupakan hasil magang Tim UNS di PT. GMEDIA Yogyakarta
+                </p>
+                <div class="card-footer">
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="project-card">
+                <div class="project-image slider">
+                    <div class="slides">
+                        <img src="images/dukcapil.png">
+                    </div>
+                </div>
+                <h3>Perancangan Website CMS Untuk Disdukcapil Kab. Sukoharjo</h3>
+                <p>
+                    Website ini dibuat menggunakan framework Laravel dan Vue Livewire, website ini tersedia halaman admin untuk mengatur 
+                    content yang akan ditampilkan ke halaman utama website Disdukcapil Kab. Sukoharjo
+                </p>
+                <div class="card-footer">
+                    <a href="#" class="project-link">View Project</a>
                 </div>
             </div>
         </div>
         
     </div>
+    <script>
+        document.querySelectorAll('.slider').forEach(slider => {
+
+            const slides = slider.querySelector('.slides');
+            const images = slides.querySelectorAll('img');
+
+            if (images.length <= 1) return;
+
+            let index = 0;
+            const total = images.length;
+
+            setInterval(() => {
+                index = (index + 1) % total;
+                slides.style.transform = `translateX(-${index * 100}%)`;
+            }, 3000);
+
+        });
+    </script>
 </body>
 </html>
